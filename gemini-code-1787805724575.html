@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soumya Ranjan Nayak | Senior Video Editor & Colorist</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-base: #06080e;
+      --bg-surface: #0c101a;
+      --bg-elevated: rgba(16, 22, 36, 0.7);
+      --bg-card: rgba(18, 24, 40, 0.55);
+      --bg-card-hover: rgba(26, 35, 58, 0.75);
+      
+      --cyan: #00d2ff;
+      --cyan-subtle: rgba(0, 210, 255, 0.12);
+      --magenta: #e0247d;
+      --violet: #7928ca;
+      --accent-grad: linear-gradient(135deg, #00d2ff 0%, #7928ca 50%, #e0247d 100%);
+      
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(0, 210, 255, 0.3);
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .canvas-light-1 {
+      position: absolute;
+      top: -15%;
+      left: 20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 210, 255, 0.09) 0%, transparent 70%);
+      filter: blur(80px);
+    }
+
+    .canvas-light-2 {
+      position: absolute;
+      top: 40%;
+      right: -10%;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(121, 40, 202, 0.1) 0%, transparent 70%);
+      filter: blur(90px);
+    }
+
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.6;
+    }
+
+    /* ---------------- HEADER ---------------- */
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(6, 8, 14, 0.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .header-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1.5px solid var(--cyan);
+      box-shadow: 0 0 12px rgba(0, 210, 255, 0.3);
+    }
+
+    .brand-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.3px;
+      color: #fff;
+    }
+
+    .brand-name span {
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-menu a:hover {
+      color: var(--text-main);
+    }
+
+    .btn-nav-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .btn-nav-wa i {
+      color: #25d366;
+    }
+
+    .btn-nav-wa:hover {
+      border-color: #25d366;
+      box-shadow: 0 0 15px rgba(37, 211, 102, 0.15);
+      transform: translateY(-1px);
+    }
+
+    /* ---------------- HERO ---------------- */
+    .hero {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 5.5rem 2rem 5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.4rem 0.9rem;
+      background: var(--cyan-subtle);
+      border: 1px solid rgba(0, 210, 255, 0.25);
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--cyan);
+      margin-bottom: 1.8rem;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+    }
+
+    .hero-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.6rem, 4.8vw, 4.2rem);
+      line-height: 1.12;
+      font-weight: 800;
+      letter-spacing: -1.2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .gradient-headline {
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 2.2rem;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.85rem 1.8rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-solid {
+      background: var(--accent-grad);
+      color: #fff;
+      border: none;
+      box-shadow: 0 4px 20px rgba(0, 210, 255, 0.25);
+    }
+
+    .btn-solid:hover {
+      box-shadow: 0 6px 28px rgba(0, 210, 255, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* ---------------- PROFILE CARD WITH B&W PHOTO ---------------- */
+    .profile-card-container {
+      position: relative;
+    }
+
+    .profile-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+
+    .profile-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .profile-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      filter: grayscale(100%) contrast(110%);
+      transition: var(--transition);
+    }
+
+    .profile-card:hover .profile-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .img-gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, #0c101a 5%, rgba(12, 16, 26, 0.2) 60%, transparent 100%);
+    }
+
+    .profile-overlay-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      padding: 0.4rem 0.9rem;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .profile-card-body {
+      padding: 1.5rem 1.8rem 1.8rem;
+    }
+
+    .profile-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .profile-role {
+      font-size: 0.85rem;
+      color: var(--cyan);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+    }
+
+    .stats-inline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+
+    .inline-stat-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 0.9rem;
+      text-align: left;
+    }
+
+    .inline-stat-box strong {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.35rem;
+      display: block;
+      color: #fff;
+    }
+
+    .inline-stat-box span {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    /* ---------------- SECTION SCAFFOLDING ---------------- */
+    .section-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-head {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--cyan);
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 3.2vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      color: #fff;
+    }
+
+    /* ---------------- SERVICES CARDS ---------------- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 2.2rem 1.8rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .service-card:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+    }
+
+    .service-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--cyan);
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon-box {
+      background: var(--accent-grad);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: #fff;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* ---------------- PORTFOLIO GRID ---------------- */
+    .filter-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-btn {
+      padding: 0.55rem 1.3rem;
+      border-radius: 8px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--cyan);
+      color: #fff;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .work-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-4px);
+    }
+
+    .work-thumb {
+      height: 200px;
+      background: linear-gradient(135deg, #0f1422, #080a12);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .thumb-pill {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 0.3rem 0.75rem;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--cyan);
+    }
+
+    .play-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      backdrop-filter: blur(6px);
+    }
+
+    .work-card:hover .play-circle {
+      background: var(--accent-grad);
+      border-color: transparent;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+    }
+
+    .work-content {
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .work-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: var(--magenta);
+      margin-bottom: 0.4rem;
+    }
+
+    .work-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+
+    .work-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 1.4rem;
+      flex-grow: 1;
+    }
+
+    .work-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .work-action:hover {
+      color: #fff;
+      gap: 12px;
+    }
+
+    /* Drive Master Callout Box */
+    .drive-banner {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(0, 210, 255, 0.08) 0%, rgba(121, 40, 202, 0.08) 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-md);
+      padding: 2.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .drive-banner-text h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: #fff;
+    }
+
+    .drive-banner-text p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    /* ---------------- CONTACT ---------------- */
+    .contact-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 3.5rem;
+    }
+
+    .contact-details h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+    }
+
+    .contact-details p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2.2rem;
+      line-height: 1.7;
+    }
+
+    .contact-row-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 1.1rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: #fff;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-row:hover {
+      border-color: var(--cyan);
+      background: rgba(255, 255, 255, 0.04);
+      transform: translateX(4px);
+    }
+
+    .contact-row i {
+      font-size: 1.1rem;
+      color: var(--cyan);
+      width: 24px;
+      text-align: center;
+    }
+
+    .contact-row-info span {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    .contact-row-info strong {
+      font-size: 0.95rem;
+    }
+
+    /* Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .form-input {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.1rem;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.92rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-input:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+    }
+
+    /* ---------------- FOOTER ---------------- */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      background: #040509;
+      color: var(--text-dim);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; padding-top: 4rem; }
+      .contact-card { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+      .drive-banner { flex-direction: column; align-items: flex-start; }
+      .nav-menu { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Backdrop -->
+  <div class="bg-canvas">
+    <div class="grid-overlay"></div>
+    <div class="canvas-light-1"></div>
+    <div class="canvas-light-2"></div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="brand">
+        <img src="https://drive.google.com/thumbnail?id=1ffws4LIUgys8P08K6r7A_yLI2K76UqZO&sz=w200" alt="Soumya Ranjan Nayak" class="brand-avatar" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'" />
+        <div class="brand-name">SOUMYA <span>NAYAK</span></div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div>
+        <a href="https://wa.me/919337630692?text=Hi%20Soumya,%20I%20want%20to%20discuss%20a%20video%20editing%20project." target="_blank" class="btn-nav-wa">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div>
+      <div class="status-badge">
+        <span class="status-dot"></span> Available for Selected Projects & Commercial Cuts
+      </div>
+      <h1 class="hero-heading">
+        Cinematic Storytelling, <br><span class="gradient-headline">Engineered for Impact.</span>
+      </h1>
+      <p class="hero-lead">
+        I am <strong>Soumya Ranjan Nayak</strong>, a post-production video editor and colorist specializing in premium wedding films, cinematic highlight reels, and high-retention content tailored to client specifications.
+      </p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn btn-solid">
+          <i class="fa-solid fa-layer-group"></i> Explore Portfolio
+        </a>
+        <a href="https://drive.google.com/drive/folders/1-zj0iQYPERO9DGg7kwE9q17yOywce1P9?usp=drive_link" target="_blank" class="btn btn-secondary">
+          <i class="fa-brands fa-google-drive"></i> Open Client Drive
+        </a>
+        <a href="tel:+919337630692" class="btn btn-secondary">
+          <i class="fa-solid fa-phone"></i> +91 9337630692
+        </a>
+      </div>
+    </div>
+
+    <!-- PROFILE PICTURE STUDIO CARD -->
+    <div class="profile-card-container">
+      <div class="profile-card">
+        <div class="profile-img-wrap">
+          <img src="https://drive.google.com/thumbnail?id=1ffws4LIUgys8P08K6r7A_yLI2K76UqZO&sz=w1000" 
+               alt="Soumya Ranjan Nayak - Video Editor"
+               onerror="this.src='https://lh3.googleusercontent.com/d/1ffws4LIUgys8P08K6r7A_yLI2K76UqZO=w1000';" />
+          <div class="img-gradient-overlay"></div>
+          <div class="profile-overlay-badge">
+            <i class="fa-solid fa-camera"></i> Colorist & Editor
+          </div>
+        </div>
+
+        <div class="profile-card-body">
+          <h2 class="profile-name">Soumya Ranjan Nayak</h2>
+          <div class="profile-role">Senior Video Post-Production</div>
+
+          <div class="stats-inline">
+            <div class="inline-stat-box">
+              <strong>287+</strong>
+              <span>Projects Completed</span>
+            </div>
+            <div class="inline-stat-box">
+              <strong>4K UHD</strong>
+              <span>ProRes & HDR Color</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section-wrap" id="services">
+    <div class="section-head">
+      <span class="section-label">Capabilities</span>
+      <h2 class="section-title">Post-Production Specializations</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon-box"><i class="fa-solid fa-film"></i></div>
+        <h3>Wedding Highlights & Teasers</h3>
+        <p>Dynamic 3 to 7-minute cinematic narratives featuring rhythmic music cutdowns, pacing curve adjustments, and emotional storytelling.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box"><i class="fa-solid fa-video"></i></div>
+        <h3>Full Length Documentary Films</h3>
+        <p>Complete multi-camera alignment with multi-channel audio synchronization covering Haldi, Sangeet, Vows, and Reception ceremonies.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box"><i class="fa-brands fa-instagram"></i></div>
+        <h3>High-Engagement Reels & Shorts</h3>
+        <p>Vertical 9:16 high-impact cuts crafted with speed ramps, audio triggers, and attire reveals optimized for social engagement.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box"><i class="fa-brands fa-youtube"></i></div>
+        <h3>YouTube & Commercial Edits</h3>
+        <p>Structured narrative editing for creators, studio brand commercials, event recaps, and documentary formats.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box"><i class="fa-solid fa-palette"></i></div>
+        <h3>Advanced Color Grading</h3>
+        <p>Log-to-Rec.709 transformation, skin tone qualification, contrast curve matching, and filmic look developments.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-box"><i class="fa-solid fa-sliders"></i></div>
+        <h3>Sound Design & Audio Mastering</h3>
+        <p>Dialogue cleaning, ambient background layering, foley sweetening, and dynamic loudness normalization.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="section-wrap" id="portfolio">
+    <div class="section-head">
+      <span class="section-label">Selected Work</span>
+      <h2 class="section-title">Drive Projects & Showreel</h2>
+    </div>
+
+    <div class="filter-row">
+      <button class="filter-btn active" onclick="filterCategory('all')">All Projects</button>
+      <button class="filter-btn" onclick="filterCategory('highlights')">Highlights</button>
+      <button class="filter-btn" onclick="filterCategory('reels')">Shorts & Reels</button>
+      <button class="filter-btn" onclick="filterCategory('full')">Full Ceremony</button>
+    </div>
+
+    <div class="portfolio-grid">
+      <!-- Card 1 -->
+      <div class="work-card" data-cat="highlights">
+        <div class="work-thumb">
+          <span class="thumb-pill">Teaser Cut</span>
+          <div class="play-circle"><i class="fa-solid fa-play"></i></div>
+        </div>
+        <div class="work-content">
+          <span class="work-category">Wedding Highlight</span>
+          <h3 class="work-title">Punam & Pravin — Cinematic Teaser</h3>
+          <p class="work-desc">Vibrant color science, bride & groom reveal sequences, and energetic audio cut pacing.</p>
+          <a href="https://drive.google.com/drive/folders/1-zj0iQYPERO9DGg7kwE9q17yOywce1P9?usp=drive_link" target="_blank" class="work-action">
+            Open File in Google Drive <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="work-card" data-cat="full">
+        <div class="work-thumb">
+          <span class="thumb-pill">Multi-Cam Sync</span>
+          <div class="play-circle"><i class="fa-solid fa-play"></i></div>
+        </div>
+        <div class="work-content">
+          <span class="work-category">Full Ceremony</span>
+          <h3 class="work-title">Ipsita & Bikash — Complete Ceremony</h3>
+          <p class="work-desc">Comprehensive rituals coverage with balanced dialogue levels and multi-camera switching.</p>
+          <a href="https://drive.google.com/drive/folders/1-zj0iQYPERO9DGg7kwE9q17yOywce1P9?usp=drive_link" target="_blank" class="work-action">
+            Open File in Google Drive <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="work-card" data-cat="reels">
+        <div class="work-thumb">
+          <span class="thumb-pill">9:16 Vertical</span>
+          <div class="play-circle"><i class="fa-solid fa-play"></i></div>
+        </div>
+        <div class="work-content">
+          <span class="work-category">Instagram Reel</span>
+          <h3 class="work-title">Abhilash & Yasmin — Royal Preview</h3>
+          <p class="work-desc">Speed ramping, dynamic motion framing, and rhythmic beat transitions.</p>
+          <a href="https://drive.google.com/drive/folders/1-zj0iQYPERO9DGg7kwE9q17yOywce1P9?usp=drive_link" target="_blank" class="work-action">
+            Open File in Google Drive <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="work-card" data-cat="highlights">
+        <div class="work-thumb">
+          <span class="thumb-pill">4K UHD</span>
+          <div class="play-circle"><i class="fa-solid fa-play"></i></div>
+        </div>
+        <div class="work-content">
+          <span class="work-category">Wedding Highlight</span>
+          <h3 class="work-title">Sradha & Subhasish — Celebration Film</h3>
+          <p class="work-desc">Golden hour warmth, drone establishing cuts, and emotional vows integration.</p>
+          <a href="https://drive.google.com/drive/folders/1-zj0iQYPERO9DGg7kwE9q17yOywce1P9?usp=drive_link" target="_blank" class="work-action">
+            Open File in Google Drive <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="work-card" data-cat="highlights">
+        <div class="work-thumb">
+          <span class="thumb-pill">Graded</span>
+          <div class="play-circle"><i class="fa-solid fa-play"></i></div>
+        </div>
+        <div class="work-content">
+          <span class="work-category">Wedding Highlight</span>
+          <h3 class="work-title">Ayushi & Nanda — Heritage Story</h3>
+          <p class="work-desc">Authentic cultural pacing with warm filmic emulation and couple portrait reveals.</p>
+          <a href="https://drive.google.com/drive/folders/1-zj0iQYPERO9DGg7kwE9q17yOywce1P9?usp=drive_link" target="_blank" class="work-action">
+            Open File in Google Drive <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="work-card" data-cat="reels">
+        <div class="work-thumb">
+          <span class="thumb-pill">Bridal Cut</span>
+          <div class="play-circle"><i class="fa-solid fa-play"></i></div>
+        </div>
+        <div class="work-content">
+          <span class="work-category">Instagram Reel</span>
+          <h3 class="work-title">Priyanka & Navin — Bridal Story</h3>
+          <p class="work-desc">Elegant jewelry macro cuts, ambient slow motion, and emotional audio track.</p>
+          <a href="https://drive.google.com/drive/folders/1-zj0iQYPERO9DGg7kwE9q17yOywce1P9?usp=drive_link" target="_blank" class="work-action">
+            Open File in Google Drive <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Live Master Banner -->
+      <div class="drive-banner">
+        <div class="drive-banner-text">
+          <h3>Full Client Archive on Google Drive</h3>
+          <p>Explore raw previews, groom & bride exports, and 287+ master cuts in the shared drive repository.</p>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1-zj0iQYPERO9DGg7kwE9q17yOywce1P9?usp=drive_link" target="_blank" class="btn btn-solid" style="white-space: nowrap;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Master Drive
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section-wrap" id="contact">
+    <div class="contact-card">
+      <div class="contact-details">
+        <span class="section-label">Initiate Project</span>
+        <h3>Let’s Discuss Your Next Edit</h3>
+        <p>Send your project scope, raw file details, or turnaround requirements to get a timeline and quote.</p>
+
+        <div class="contact-row-list">
+          <a href="tel:+919337630692" class="contact-row">
+            <i class="fa-solid fa-phone"></i>
+            <div class="contact-row-info">
+              <span>Direct Phone</span>
+              <strong>+91 9337630692</strong>
+            </div>
+          </a>
+
+          <a href="https://wa.me/919337630692?text=Hello%20Soumya,%20I%20want%20to%20discuss%20a%20video%20editing%20project." target="_blank" class="contact-row">
+            <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+            <div class="contact-row-info">
+              <span>WhatsApp Direct</span>
+              <strong>+91 9337630692</strong>
+            </div>
+          </a>
+
+          <a href="mailto:soumyaranjann89@gmail.com" class="contact-row">
+            <i class="fa-solid fa-envelope"></i>
+            <div class="contact-row-info">
+              <span>Email Address</span>
+              <strong>soumyaranjann89@gmail.com</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="submitInquiry(event)">
+        <input type="text" id="clientName" class="form-input" placeholder="Your Name or Studio Name" required />
+        <select id="projectCategory" class="form-input" required>
+          <option value="Wedding Highlights">Wedding Highlights & Teaser</option>
+          <option value="Full Wedding Film">Full Length Wedding Documentary</option>
+          <option value="Instagram Reels">Cinematic Instagram Reels</option>
+          <option value="YouTube / Commercial">YouTube & Commercial Video</option>
+          <option value="Custom Project">Custom Post-Production Request</option>
+        </select>
+        <textarea id="projectDetails" class="form-input" rows="4" placeholder="Brief project details (e.g. footage length, deadline, drive links)..." required></textarea>
+        <button type="submit" class="btn btn-solid" style="justify-content: center; width: 100%;">
+          <i class="fa-brands fa-whatsapp"></i> Send Direct Brief to WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <strong>Soumya Ranjan Nayak</strong>. Professional Video Post-Production & Color Grading.</p>
+  </footer>
+
+  <script>
+    function filterCategory(cat) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.work-card');
+      cards.forEach(c => {
+        if (cat === 'all' || c.getAttribute('data-cat') === cat) {
+          c.style.display = 'flex';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+    }
+
+    function submitInquiry(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value;
+      const type = document.getElementById('projectCategory').value;
+      const details = document.getElementById('projectDetails').value;
+
+      const text = `Hi Soumya, My name is ${name}. I am looking for *${type}* editing.%0A%0AProject Brief: ${encodeURIComponent(details)}`;
+      window.open(`https://wa.me/919337630692?text=${text}`, '_blank');
+    }
+  </script>
+</body>
+</html>
